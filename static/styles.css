@@ -1,0 +1,270 @@
+:root {
+  --bg: #f4f6f9;
+  --card: #fff;
+  --text: #1a1d26;
+  --muted: #5c6478;
+  --accent: #0d6efd;
+  --accent-hover: #0b5ed7;
+  --error-bg: #fdecea;
+  --error-text: #8f1f1f;
+  --border: #e2e6ef;
+  --radius: 10px;
+  --font: system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.header {
+  padding: 1.75rem 1.25rem 1rem;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.65rem;
+  font-weight: 650;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.layout {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.35rem 1.25rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 10px rgba(26, 29, 38, 0.06);
+}
+
+.card h2 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.field span {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.hint {
+  display: inline !important;
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="file"],
+textarea {
+  width: 100%;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font: inherit;
+  background: #fafbfc;
+}
+
+input[type="file"] {
+  padding: 0.45rem;
+  font-size: 0.85rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 72px;
+}
+
+input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.disabled-row {
+  padding: 0.75rem;
+  background: #f8f9fb;
+  border-radius: 6px;
+  border: 1px dashed var(--border);
+}
+
+.inline-disabled {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.45rem;
+}
+
+.inline-disabled span:first-child {
+  margin-bottom: 0;
+}
+
+.soon {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.25rem;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.message {
+  padding: 0.65rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.message-error {
+  background: var(--error-bg);
+  color: var(--error-text);
+  border: 1px solid #f5c6c3;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.results .block {
+  margin-bottom: 1.35rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.results .block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.results h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.score-big {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.score-label-text {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.criteria-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.criteria-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid #eef0f5;
+  font-size: 0.92rem;
+}
+
+.criteria-list li:last-child {
+  border-bottom: none;
+}
+
+.criteria-name {
+  color: var(--text);
+}
+
+.criteria-score {
+  font-weight: 700;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+ul:not(.criteria-list) {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+ul:not(.criteria-list) li {
+  margin-bottom: 0.35rem;
+}
+
+.improved-text {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  padding: 0.75rem;
+  background: #f8fafc;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.block-cta p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}

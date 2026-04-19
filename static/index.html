@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Нейро-помощник Авито</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Нейро-помощник Авито</h1>
+    <p class="subtitle">Загрузите скриншоты объявления — получите оценку и короткие рекомендации</p>
+  </header>
+
+  <main class="layout">
+    <section class="card form-card">
+      <h2>Анализ объявления</h2>
+      <form id="analyze-form" class="form">
+        <label class="field">
+          <span>Скриншоты (1–10 файлов, до 5 МБ каждый)</span>
+          <input type="file" name="files" accept="image/jpeg,image/png,image/webp,image/gif" multiple required />
+        </label>
+
+        <label class="field">
+          <span>Ниша <span class="hint">необязательно</span></span>
+          <input type="text" name="niche" placeholder="Например: ремонт квартир" maxlength="500" />
+        </label>
+
+        <label class="field">
+          <span>Целевая аудитория <span class="hint">необязательно</span></span>
+          <input type="text" name="audience" placeholder="Кому подойдёт услуга" maxlength="500" />
+        </label>
+
+        <label class="field">
+          <span>Комментарий <span class="hint">необязательно</span></span>
+          <textarea name="comment" rows="3" placeholder="Дополнительный контекст" maxlength="2000"></textarea>
+        </label>
+
+        <div class="field disabled-row">
+          <label class="inline-disabled">
+            <span>Ссылка на объявление Avito</span>
+            <span class="soon">Скоро будет доступно</span>
+          </label>
+          <input type="url" id="avito-url" disabled value="" placeholder="https://www.avito.ru/..." />
+        </div>
+
+        <div id="client-error" class="message message-error" hidden></div>
+
+        <button type="submit" class="btn" id="submit-btn">Проанализировать</button>
+      </form>
+    </section>
+
+    <section id="result-area" class="card results hidden">
+      <h2>Результат</h2>
+
+      <article class="block" id="block-overall">
+        <h3>Общая оценка</h3>
+        <p class="score-big" id="score-overall"></p>
+      </article>
+
+      <article class="block" id="block-label">
+        <h3>Словесный уровень объявления</h3>
+        <p class="score-label-text" id="score-label"></p>
+      </article>
+
+      <article class="block" id="block-criteria">
+        <h3>Оценки по критериям</h3>
+        <ul class="criteria-list" id="criteria-list"></ul>
+      </article>
+
+      <article class="block">
+        <h3>Сильные стороны</h3>
+        <ul id="list-strengths"></ul>
+      </article>
+
+      <article class="block">
+        <h3>Слабые стороны</h3>
+        <ul id="list-weaknesses"></ul>
+      </article>
+
+      <article class="block">
+        <h3>Рекомендации</h3>
+        <ul id="list-recommendations"></ul>
+      </article>
+
+      <article class="block">
+        <h3>Короткий улучшенный текст</h3>
+        <pre class="improved-text" id="improved-text"></pre>
+      </article>
+
+      <article class="block block-summary">
+        <h3>Итог по объявлению</h3>
+        <p id="final-summary"></p>
+      </article>
+
+      <article class="block block-offer">
+        <h3>Оффер на доработку и консультацию</h3>
+        <p id="final-offer"></p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>MVP · только скриншоты, без авторизации и оплаты</span>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
