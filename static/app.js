@@ -59,8 +59,14 @@ function hideError() {
   el.hidden = true;
 }
 
+function formatOverallScore(score) {
+  const n = typeof score === "number" ? score : parseInt(String(score ?? ""), 10);
+  if (!Number.isFinite(n)) return "— / 10";
+  return `${n} / 10`;
+}
+
 function fillResults(data) {
-  document.getElementById("score-overall").textContent = `${data.score_overall} / 10`;
+  document.getElementById("score-overall").textContent = formatOverallScore(data.score_overall);
   document.getElementById("score-label").textContent = data.score_label || "";
 
   const criteriaList = document.getElementById("criteria-list");
