@@ -1,0 +1,25 @@
+# Секреты и локальная конфигурация (передаются через -e / --env-file при запуске)
+.env
+.env.*
+
+# Git и IDE
+.git
+.gitignore
+.github
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+.Python
+.venv
+venv
+*.egg-info
+.pytest_cache
+.mypy_cache
+
+# Прочее
+.idea
+.vscode
+*.md
+База_знаний.txt
